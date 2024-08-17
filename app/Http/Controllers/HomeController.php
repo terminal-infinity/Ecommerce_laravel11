@@ -14,7 +14,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('admin.index');
+        $user = User::where('usertype','user')->get()->count();
+        $order = Order::all()->count();
+        $deliverd = Order::where('status','delivered')->get()->count();
+        return view('admin.home',compact('user','order','deliverd'));
     }
     public function home()
     {
@@ -125,5 +128,15 @@ class HomeController extends Controller
         toastr()->timeOut(5000)->closeButton()->success('Order Place Successfully');
         return redirect()->back();
         
+    }
+
+    public function myorders(){
+
+            $user=Auth::user()->id;
+            $count=Cart::where('user_id',$user)->get()->count();
+
+            $order=Order::where('user_id',$user)->get();
+
+        return view('home.myorders',compact('count','order'));
     }
 }

@@ -33,4 +33,6 @@
 		<link rel="stylesheet" href="{{ asset('admincss/plugins/fontawesome-free/css/all.min.css') }}">
 		<!-- Theme style -->
 		<link rel="stylesheet" href="{{ asset('admincss/css/adminlte.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admincss/plugins/summernote/summernote-bs4.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admincss/plugins/dropzone/dropzone.css') }}">
 		<link rel="stylesheet" href="{{ asset('admincss/css/custom.css') }}">

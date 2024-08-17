@@ -25,11 +25,6 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="testimonial.html">
-                Testimonial
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact Us</a>
             </li>
           </ul>
@@ -37,6 +32,10 @@
 
           @if (Route::has('login'))
           @auth
+
+            <a class="nav-link" href="{{url('myorders')}}">
+              My Order
+            </a>
 
           <a href="{{url('mycart')}}">
             <i class="fa fa-shopping-bag" aria-hidden="true"></i>

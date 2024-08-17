@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Order;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class AdminController extends Controller
 {
+    
     public function view_category(){
         $data=Category::all();
 
@@ -73,7 +75,7 @@ class AdminController extends Controller
 
         toastr()->timeOut(5000)->closeButton()->success('Product Deleted Successfully');
 
-        return redirect()->back();
+        return redirect('/view_product');
     }
     public function view_product(){
         $product=Product::paginate(3);
@@ -82,7 +84,7 @@ class AdminController extends Controller
     public function delete_product($id){
         $data=Product::find($id);
 
-        $image_path=public_path('products/'.$data->image);
+        $image_path=public_path('products'.$data->image);
         if(file_exists($image_path)){
             unlink($image_path);
         }
@@ -142,5 +144,11 @@ class AdminController extends Controller
         $data->status='Delivered';
         $data->save();
         return redirect('view_order');
+    }
+
+    public function print_pdf($id){
+        $data=Order::find($id);
+        $pdf = Pdf::loadView('admin.invoice', compact('data'));
+        return $pdf->download('order.pdf');
     }
 }

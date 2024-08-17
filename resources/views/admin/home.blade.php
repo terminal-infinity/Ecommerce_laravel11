@@ -23,7 +23,7 @@
             <div class="col-lg-4 col-6">							
                 <div class="small-box card">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{ $order }}</h3>
                         <p>Total Orders</p>
                     </div>
                     <div class="icon">
@@ -36,7 +36,7 @@
             <div class="col-lg-4 col-6">							
                 <div class="small-box card">
                     <div class="inner">
-                        <h3>50</h3>
+                        <h3>{{ $user }}</h3>
                         <p>Total Customers</p>
                     </div>
                     <div class="icon">
@@ -49,13 +49,13 @@
             <div class="col-lg-4 col-6">							
                 <div class="small-box card">
                     <div class="inner">
-                        <h3>$1000</h3>
-                        <p>Total Sale</p>
+                        <h3>{{ $deliverd }}</h3>
+                        <p>Total Orders Deliverd</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
                     </div>
-                    <a href="javascript:void(0);" class="small-box-footer">&nbsp;</a>
+                    <a href="#" class="small-box-footer text-dark">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         </div>

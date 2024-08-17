@@ -12,7 +12,7 @@
         <!-- Add icons to the links using the .nav-icon class
           with font-awesome or any other icon font library -->
         <li class="nav-item">
-          <a href="dashboard.html" class="nav-link">
+          <a href="{{url('admin/dashboard')}}" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>Dashboard</p>
           </a>																
@@ -27,6 +27,12 @@
           <a href="{{url('view_product')}}" class="nav-link">
             <i class="nav-icon fas fa-tag"></i>
             <p>Products</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{url('view_order')}}" class="nav-link">
+            <i class="nav-icon fas fa-shopping-bag"></i>
+            <p>Orders</p>
           </a>
         </li>
         <li class="nav-item">
@@ -51,12 +57,7 @@
             <p>Shipping</p>
           </a>
         </li>							
-        <li class="nav-item">
-          <a href="orders.html" class="nav-link">
-            <i class="nav-icon fas fa-shopping-bag"></i>
-            <p>Orders</p>
-          </a>
-        </li>
+        
         <li class="nav-item">
           <a href="discount.html" class="nav-link">
             <i class="nav-icon  fa fa-percent" aria-hidden="true"></i>
