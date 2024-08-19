@@ -1,44 +1,107 @@
+@include('home.css')
+@include('home.header')
 
-<section class="contact_section ">
-    <div class="container px-0">
-      <div class="heading_container ">
-        <h2 class="">
-          Contact Us
-        </h2>
-      </div>
-    </div>
-    <div class="container container-bg">
-      <div class="row">
-        <div class="col-lg-7 col-md-6 px-0">
-          <div class="map_container">
-            <div class="map-responsive">
-              <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-5 px-0">
-          <form action="#">
-            <div>
-              <input type="text" placeholder="Name" />
-            </div>
-            <div>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div>
-              <input type="text" placeholder="Phone" />
-            </div>
-            <div>
-              <input type="text" class="message-box" placeholder="Message" />
-            </div>
-            <div class="d-flex ">
-              <button>
-                SEND
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="content">
+					<h1 class="page-name">Contact Us</h1>
+					<ol class="breadcrumb">
+						<li><a href="index.html">Home</a></li>
+						<li class="active">contact</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-  <br><br><br>
+
+<section class="page-wrapper">
+	<div class="contact-section">
+		<div class="container">
+			<div class="row">
+				<!-- Contact Form -->
+				<div class="contact-form col-md-6 " >
+					<form id="contact-form" method="post" action="https://api.web3forms.com/submit" role="form">
+            <input type="hidden" name="access_key" value="9763aee1-083a-438f-a6be-ec502d900fbf">
+						<div class="form-group">
+							<input type="text" placeholder="Your Name" class="form-control" name="name" id="name">
+						</div>
+						
+						<div class="form-group">
+							<input type="email" placeholder="Your Email" class="form-control" name="email" id="email">
+						</div>
+						
+						<div class="form-group">
+							<input type="text" placeholder="Subject" class="form-control" name="subject" id="subject">
+						</div>
+						
+						<div class="form-group">
+							<textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>	
+						</div>
+						
+						<div id="mail-success" class="success">
+							Thank you. The Mailman is on His Way :)
+						</div>
+						
+						<div id="mail-fail" class="error">
+							Sorry, don't know what happened. Try later :(
+						</div>
+						
+						<div id="cf-submit">
+							<input type="submit" id="contact-submit" class="btn btn-transparent" value="Submit">
+						</div>						
+						
+					</form>
+				</div>
+				<!-- ./End Contact Form -->
+				
+				<!-- Contact Details -->
+				<div class="contact-details col-md-6 " >
+					<div class="google-map">
+						<div id="map"></div>
+					</div>
+					<ul class="contact-short-info" >
+						<li>
+							<i class="tf-ion-ios-home"></i>
+							<span>Khaja Road, Bayzid, Chittagong, Bangladesh</span>
+						</li>
+						<li>
+							<i class="tf-ion-android-phone-portrait"></i>
+							<span>Phone: +880-31-000-000</span>
+						</li>
+						<li>
+							<i class="tf-ion-android-globe"></i>
+							<span>Fax: +880-31-000-000</span>
+						</li>
+						<li>
+							<i class="tf-ion-android-mail"></i>
+							<span>Email: hello@example.com</span>
+						</li>
+					</ul>
+					<!-- Footer Social Links -->
+					<div class="social-icon">
+						<ul>
+							<li><a class="fb-icon" href="https://www.facebook.com/themefisher"><i class="tf-ion-social-facebook"></i></a></li>
+							<li><a href="https://www.twitter.com/themefisher"><i class="tf-ion-social-twitter"></i></a></li>
+							<li><a href="https://themefisher.com/"><i class="tf-ion-social-dribbble-outline"></i></a></li>
+							<li><a href="https://themefisher.com/"><i class="tf-ion-social-googleplus-outline"></i></a></li>
+							<li><a href="https://themefisher.com/"><i class="tf-ion-social-pinterest-outline"></i></a></li>
+						</ul>
+					</div>
+					<!--/. End Footer Social Links -->
+				</div>
+				<!-- / End Contact Details -->
+					
+				
+			
+			</div> <!-- end row -->
+		</div> <!-- end container -->
+	</div>
+</section>
+@include('home.footer')
+
+
+

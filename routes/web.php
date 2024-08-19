@@ -7,6 +7,10 @@ use App\Http\Controllers\AdminController;
 
 
 route::get('/', [HomeController::class,'home']);
+route::get('/about', [HomeController::class,'about']);
+route::get('/shop', [HomeController::class,'shop']);
+route::get('/contact', [HomeController::class,'contact']);
+route::get('/blog', [HomeController::class,'blog']);
 
 route::get('/dashboard', [HomeController::class,'login_home'])->middleware(['auth', 'verified'])->name('dashboard');
 route::get('myorders', [HomeController::class, 'myorders'])->middleware(['auth', 'verified']);
@@ -57,3 +61,9 @@ route::get('view_order', [AdminController::class, 'view_order'])-> middleware(['
 route::get('on_the_way/{id}', [AdminController::class, 'on_the_way'])-> middleware(['auth','admin']);
 route::get('delivered/{id}', [AdminController::class, 'delivered'])-> middleware(['auth','admin']);
 route::get('print_pdf/{id}', [AdminController::class, 'print_pdf'])-> middleware(['auth','admin']);
+
+
+Route::controller(HomeController::class)->group(function(){
+    Route::get('stripe/{value}', 'stripe');
+    Route::post('stripe/{value}', 'stripePost')->name('stripe.post');
+});
